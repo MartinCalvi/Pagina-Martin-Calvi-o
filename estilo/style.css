@@ -1,0 +1,126 @@
+:root {
+    --primary: #2c3e50;
+    --secondary: #34495e;
+    --accent: #3498db;
+    --text: #333;
+    --light: #ecf0f1;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: #f4f7f6;
+}
+
+
+
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Header */
+.header {
+    background: var(--primary);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+
+.link{
+    text-decoration: none; 
+    color: aliceblue;
+}
+
+
+.profile-pic-container {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    /*border: 3px solid #000;*/
+}
+
+.header h1 { font-size: 2.5rem; letter-spacing: 2px; }
+.header h2 { font-weight: 300; color: var(--accent); }
+
+.contact-info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+.profile-pic {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Layout Grid */
+.cv-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr; /* 2 columnas en desktop */
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    background: var(--light);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h3 {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+.item { margin-bottom: 15px; }
+.item h4 { color: var(--secondary); }
+.date { font-size: 0.85rem; color: #7f8c8d; font-style: italic; }
+.desc { font-size: 0.9rem; margin-top: 5px; }
+
+/* Skills & Courses */
+.skills-group h4 { font-size: 0.9rem; margin-top: 10px; color: var(--accent); }
+.pub-list li { margin-bottom: 10px; font-size: 0.9rem; list-style: none; border-left: 3px solid var(--accent); padding-left: 10px; }
+
+/* Responsive Design */
+
+/* Tabletas */
+@media (max-width: 992px) {
+    .cv-grid {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+    .sidebar {
+        order: 2; /* Pasa abajo en móviles */
+    }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+    .header { padding: 20px; }
+    .header h1 { font-size: 1.8rem; }
+    .contact-info { flex-direction: column; gap: 10px; }
+}
